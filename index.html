@@ -384,7 +384,7 @@
             color: #333;
         }
 
-        /* Animation */
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
@@ -634,7 +634,7 @@
     </div>
 </div>
 
-<!-- Registration Modal paste here -->
+
 <div id="registerModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('registerModal')">&times;</span>
@@ -669,7 +669,7 @@
     </div>
 </div>
 
-<!-- Login Modal paste here -->
+
 <div id="loginModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('loginModal')">&times;</span>
@@ -733,7 +733,7 @@
 
 
     <script>
-        // Country name animation
+        
         const countries = ["United States", "India", "France", "Germany", "Italy", "Spain", "Japan", "Australia", "Canada"];
         let index = 0;
         setInterval(() => {
@@ -797,5 +797,37 @@
             closeModal('loginModal');
         };
     </script>
+
+    <!-- JavaScript for login form validation -->
+    <script>
+    
+    document.getElementById('loginForm').onsubmit = function(event) {
+        event.preventDefault(); 
+
+        
+        const correctEmail = "nikhil.jain@ktt.com";
+        const correctPassword = "jain@university";
+
+        
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        
+        if (email === correctEmail && password === correctPassword) {
+            alert('Login successful!');  
+            closeModal('loginModal');    
+        } else {
+            alert('Invalid email or password. Please try again.'); 
+        }
+    };
+    </script>
+
+    <script>
+    
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none'; 
+    }
+    </script>
+
 </body>
 </html>
